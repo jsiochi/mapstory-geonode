@@ -1,4 +1,4 @@
-angular.module('storylayers', ['storylayers.directives','storylayers.services','storylayers.controllers','ui.bootstrap', 'ui-rangeSlider', 'colorpicker.module']);
+angular.module('storylayers', ['storylayers.directives','storylayers.services','storylayers.controllers','ui.bootstrap', 'ui-rangeSlider']);
 
 angular.module('storylayers.directives', [])
     .directive('clickValue', function() {
