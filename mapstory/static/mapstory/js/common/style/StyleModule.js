@@ -306,6 +306,8 @@ angular.module('storylayers.controllers', ['storylayers.services'])
         
         var mockup = false;
         
+        console.log('remote: ' + remoteLink);
+        
         $scope.layers = [];
         
         $scope.beopen = false;
