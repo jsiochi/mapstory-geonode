@@ -1,4 +1,5 @@
 {% extends "maps/_base.html" %}
+{% load mapstory_tags %}
 
 {% block styles %}
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet" type="text/css">
@@ -25,6 +26,10 @@
     <script src="{{ STATIC_URL }}vendor/openlayers/lib/OpenLayers.js"></script>
 	
 	-->
+
+<script>
+    var remoteLink = "{% remote_content '' %}";
+</script>
     
 <script src="{{ STATIC_URL }}vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     

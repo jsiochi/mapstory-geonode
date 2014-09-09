@@ -277,7 +277,7 @@ angular.module('storylayers.services', []).factory('drawSpace', function () {
         getLayerStyleTemplate: function(layerName, geomType) {
             return {
                     graphicName: 'Circle',
-                    externalGraphic: 'svg/circle-18.svg',
+                    externalGraphic: remoteLink + 'style_editor/icons/' + 'circle-18.svg',
                     pointRadius: 10, 
                     fillColor: 'rgb(205, 92, 92)', 
                     fillOpacity: 54,
@@ -306,8 +306,6 @@ angular.module('storylayers.controllers', ['storylayers.services'])
         
         var mockup = false;
         
-        console.log('remote: ' + remoteLink);
-        
         $scope.layers = [];
         
         $scope.beopen = false;
@@ -329,16 +327,24 @@ angular.module('storylayers.controllers', ['storylayers.services'])
                             ['silver','Gainsboro'],['burlywood','Hazel'],['cornsilk','Cream'],['lavender','Lavender'],['olive','Olive'],
                             ['yellow','Lemon'],['steelblue','Navy']];
         
-        $scope.imgList = ['svg/circle-18.svg', 'svg/square-18.svg', 'svg/triangle-18.svg', 'svg/heart-18.svg', 'svg/star-18.svg', 
-                          'svg/marker-18.svg', 'svg/park-18.svg', 'svg/lodging-18.svg', 'svg/monument-18.svg', 'svg/airport-18.svg', 
-                          'svg/rail-18.svg', 'svg/ferry-18.svg', 'svg/harbor-18.svg', 'svg/bicycle-18.svg', 'svg/art-gallery-18.svg', 
-                          'svg/college-18.svg', 'svg/library-18.svg', 'svg/town-hall-18.svg', 'svg/restaurant-18.svg', 'svg/grocery-18.svg', 
-                          'svg/hospital-18.svg', 'svg/industrial-18.svg', 'svg/commercial-18.svg', 'svg/water-18.svg', 'svg/music-18.svg', 
-                          'svg/city-18.svg', 'svg/car-18.svg', 'svg/chemist-18.svg', 'svg/village-18.svg', 'svg/zoo-18.svg', 
-                          'svg/theatre-18.svg', 'svg/danger-18.svg', 'svg/camera-18.svg', 'svg/farm-18.svg', 'svg/shop-18.svg', 
-                          'svg/cafe-18.svg', 'svg/police-18.svg', 'svg/golf-18.svg', 'svg/suitcase-18.svg'];
+        var preImgList = ['circle-18.svg', 'square-18.svg', 'triangle-18.svg', 'heart-18.svg', 'star-18.svg', 
+                          'marker-18.svg', 'park-18.svg', 'lodging-18.svg', 'monument-18.svg', 'airport-18.svg', 
+                          'rail-18.svg', 'ferry-18.svg', 'harbor-18.svg', 'bicycle-18.svg', 'art-gallery-18.svg', 
+                          'college-18.svg', 'library-18.svg', 'town-hall-18.svg', 'restaurant-18.svg', 'grocery-18.svg', 
+                          'hospital-18.svg', 'industrial-18.svg', 'commercial-18.svg', 'water-18.svg', 'music-18.svg', 
+                          'city-18.svg', 'car-18.svg', 'chemist-18.svg', 'village-18.svg', 'zoo-18.svg', 
+                          'theatre-18.svg', 'danger-18.svg', 'camera-18.svg', 'farm-18.svg', 'shop-18.svg', 
+                          'cafe-18.svg', 'police-18.svg', 'golf-18.svg', 'suitcase-18.svg'];
         
-        var slidePath = '../MapStoryComposer/img/styleslides/'
+        var i = 0;
+        
+        for(i = 0; i < preImgList.length; i++) {
+            preImgList[i] = remoteLink + 'style_editor/icons/' + preImgList[i];
+        }
+        
+        $scope.imgList = preImgList;
+        
+        var slidePath = remoteLink + 'style_editor/slides/'
         
         var PTslides = [{image: slidePath + 'PTsimple.png', active: true},
                         {image: slidePath + 'PTchoropleth.png', active: false},
